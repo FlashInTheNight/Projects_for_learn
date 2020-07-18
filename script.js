@@ -38,8 +38,11 @@ console.log(personalMovieDB);
 for (let i=1;i<=numberOfFilms;i++) {
     let  a = prompt('Один из последних просмотренных фильмов?', ''),
          b = prompt('На сколько оцените его?', '');
-
-    personalMovieDB.movies[a] = b;         
+if (a===null || a >= 50) {
+    break;
+} else {
+    personalMovieDB.movies[a] = b;  
+       }       
 };
 
 console.log(personalMovieDB);
