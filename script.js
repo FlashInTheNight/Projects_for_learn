@@ -1,4 +1,4 @@
-/* Задание на урок: 
+/* Задание на урок:
 
 1) Первую часть задания повторить по уроку
 
@@ -16,8 +16,8 @@ P.S. Функции вызывать не обязательно */
 let numberOfFilms;
 
 function start() {
-    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');  
-    
+    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+
     while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
         numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
     }
@@ -32,6 +32,7 @@ const personalMovieDB = {
     genres: [],
     privat: false
 };
+
 
 function rememberMyFilms() {
     for (let i = 0; i < 2; i++) {
@@ -64,27 +65,18 @@ function detectPersonalLevel() {
 
 detectPersonalLevel();
 
-//console.log(personalMovieDB);
-
-let showMyDB = function() {
-    if(personalMovieDB.privat == false) {
+function showMyDB (hidden) {
+    if (!hidden) {
         console.log(personalMovieDB);
     }
-};
+}
 
-showMyDB();
-
-
-const genres = [];
-let questiongenres;
+showMyDB(personalMovieDB.privat);
 
 function writeYourGenres() {
-    for (let i=0; i<3; i++) {
-        questiongenres = prompt(`Ваш любимый жанр под номером ${i+1}`);
-        genres[i] = questiongenres;
+    for (let i = 1; i <= 3; i++) {
+        personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);
     }
 }
 
 writeYourGenres();
-
-//console.log(genres);
