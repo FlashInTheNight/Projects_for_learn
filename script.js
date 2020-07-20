@@ -64,5 +64,27 @@ function detectPersonalLevel() {
 
 detectPersonalLevel();
 
-console.log(personalMovieDB);
+//console.log(personalMovieDB);
 
+let showMyDB = function() {
+    if(personalMovieDB.privat == false) {
+        console.log(personalMovieDB);
+    }
+};
+
+showMyDB();
+
+
+const genres = [];
+let questiongenres;
+
+function writeYourGenres() {
+    for (let i=0; i<3; i++) {
+        questiongenres = prompt(`Ваш любимый жанр под номером ${i+1}`);
+        genres[i] = questiongenres;
+    }
+}
+
+writeYourGenres();
+
+//console.log(genres);
